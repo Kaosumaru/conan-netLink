@@ -38,4 +38,4 @@ class netLinkConan(ConanFile):
         self.copy("*.h", dst="include/netLink", src="install/include/netLink")
 
     def package_info(self):
-        self.cpp_info.libs = ["netLink"]
+        self.cpp_info.libs = ["netLink-d" if self.settings.build_type == "Debug" else "netLink"]
